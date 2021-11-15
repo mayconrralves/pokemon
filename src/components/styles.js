@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 700px;
-    height: 500px;
+    width: 90vw;
+    height: 70vh;
     border-radius: 12px;
     border: 0;
     background-color: rgba(0,0,100, 0.3);
@@ -19,20 +19,26 @@ export const Container = styled.div`
             width: inherit;
             height: inherit;
             h2 {
-                font-size: 1.8em;
+                font-size: 3vw;
                 margin-top: 10px;
                 margin-bottom: 30px;
                 color: white;
                 text-transform: capitalize;
             }
             img {
-                height: 150px;
-                width: auto;
-                &:nth-child(2){
-                        height: 200px;
-                        border: solid 1 red;
-                    }
+                height: 20vh;
+                width: 20vw;
             }
+            &:nth-child(2) {
+                h2 {
+                    font-size: 4vw;
+                }
+                img {
+                    height: 28vh;
+                    width: 28vw;
+                    border: solid 1 red;
+                }
+             }
         }
     }
     div{
@@ -40,8 +46,8 @@ export const Container = styled.div`
         height: auto;
         display: flex;
         justify-content: space-around;
-        margin-top: 40px;
         margin-bottom: 20px;
+
         button {
             height: 50px;
             width: 150px;
