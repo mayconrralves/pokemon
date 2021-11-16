@@ -54,23 +54,26 @@ export default function ListPokemon(){
     }, [numberPokemon]);
     return (
         <div>
-            {!pokemon && <div>Carregado...</div>}
-            {pokemon &&
+            {!pokemon.length && <div>Carregado...</div>}
+            {pokemon.length &&
                 <Container>
                     <div>
                         {
-                            pokemon.map((poke,i)=>(
-                                    
-                                    poke && <div key={'img'+i} >
-                                        <h2>{poke.name} #{poke.id}</h2>
-                                        <img src={poke.sprites.other.dream_world.front_default}/>
-                                    </div>
-                            ))
+                            pokemon && <>
+                                <div  onClick={previousPokemon}>
+                                        <h2>{pokemon[0].name} #{pokemon[0].id}</h2>
+                                        <img src={pokemon[0].sprites.other.dream_world.front_default}/>
+                                </div>
+                                <div  onClick={previousPokemon}>
+                                        <h2>{pokemon[1].name} #{pokemon[1].id}</h2>
+                                        <img src={pokemon[1].sprites.other.dream_world.front_default}/>
+                                </div>
+                                <div  onClick={nextPokemon}>
+                                        <h2>{pokemon[2].name} #{pokemon[2].id}</h2>
+                                        <img src={pokemon[2].sprites.other.dream_world.front_default}/>
+                                </div>
+                            </>
                         }
-                    </div>
-                    <div>
-                        <button onClick={previousPokemon}>Previous</button>
-                        <button onClick={nextPokemon}>Next</button>
                     </div>
                 </Container>
             }
