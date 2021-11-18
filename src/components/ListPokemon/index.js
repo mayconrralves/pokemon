@@ -62,15 +62,24 @@ export default function ListPokemon(){
                             pokemon && <>
                                 <div  onClick={previousPokemon}>
                                         <h2>{pokemon[0].name} #{pokemon[0].id}</h2>
-                                        <img src={pokemon[0].sprites.other.dream_world.front_default}/>
+                                        <img 
+                                            src={pokemon[0].sprites.other.dream_world.front_default}
+                                            alt={pokemon[0].name}    
+                                        />
                                 </div>
-                                <div  onClick={previousPokemon}>
+                                <div  onClick={null}>
                                         <h2>{pokemon[1].name} #{pokemon[1].id}</h2>
-                                        <img src={pokemon[1].sprites.other.dream_world.front_default}/>
+                                        <img 
+                                            src={pokemon[1].sprites.other.dream_world.front_default}
+                                            alt={pokemon[1].name}   
+                                        />
                                 </div>
                                 <div  onClick={nextPokemon}>
                                         <h2>{pokemon[2].name} #{pokemon[2].id}</h2>
-                                        <img src={pokemon[2].sprites.other.dream_world.front_default}/>
+                                        <img 
+                                            src={pokemon[2].sprites.other.dream_world.front_default}
+                                            alt={pokemon[0].name}   
+                                        />
                                 </div>
                             </>
                         }

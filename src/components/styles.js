@@ -11,13 +11,21 @@ export const Container = styled.div`
     justify-content: space-around;
     flex-direction: column;
     div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 20px;
         div  {
             display: flex;
             justify-content: center;
+            position: relative;
             align-items: center;
             flex-direction: column;
-            width: inherit;
-            height: inherit;
+            width: 50%;
+            height: 50%;
+            margin: 0 6px;
             h2 {
                 font-size: 3vw;
                 margin-top: 10px;
@@ -30,6 +38,7 @@ export const Container = styled.div`
                 width: 20vw;
             }
             &:nth-child(2) {
+                cursor: pointer;
                 h2 {
                     font-size: 4vw;
                 }
@@ -39,25 +48,34 @@ export const Container = styled.div`
                     border: solid 1 red;
                 }
              }
-        }
-    }
-    div{
-        width: inherit;
-        height: auto;
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 20px;
+            &:nth-child(2n+1)::before{
+                position:  absolute;
+                background-color: rgba(0,0,0,0.4);
+                height: 25%;
+                width:  100%;
+                border-radius: 10px;
+                opacity: 0;
+                content: "";
+                transition: opacity 1.9s;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                font-size: 2.3em;
+                font-weight: bold;
+                color: white;
+                cursor: pointer;
+                
+            }
+            &:first-child:hover::before{
+                content: "Previous";
+                opacity: 0.7;
 
-        button {
-            height: 50px;
-            width: 150px;
-            border-radius: 12px;
-            border: 0;
-            margin-left: 12px;
-            background-color: rgba(0,150,0,0.8);
-            color: white;
-            font-weight: bold;
-            font-size: 1.3em;
+            }
+            &:last-child:hover::before{
+                content: "Next";
+                opacity: 0.7;
+                
+            }
         }
     }
 `;
